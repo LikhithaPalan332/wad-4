@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Interactive Quiz</title>
+    <script type="text/javascript">
+        function quiz() {
+            var q1 = prompt("What is the short form of 'Web Application Development'?", "Enter your answer here");
+            if (q1 == "WAD") {
+                alert("Correct!");
+      
+            } else {
+                alert("Incorrect. The correct answer is WAD.");
+            }
+
+            var q2 = prompt("What does HTML stand for?", "Enter your answer here");
+            if (q2 == "HyperText Markup Language") {
+                alert("Correct!");
+            
+            } else {
+                alert("Incorrect. The correct answer is HyperText Markup Language.");
+            }
+
+            var q3 = prompt("What does CSS stand for?", "Enter your answer here");
+            if (q3 == "Cascading Style Sheets") {
+                alert("Correct!");            } 
+	    else {
+                alert("Incorrect. The correct answer is Cascading Style Sheets.");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Interactive Quiz</h1>
+    <form>
+        <input type="button" value="Start Quiz" onclick="quiz()" />
+    </form>
+</body>
+</html>

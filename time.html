@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Greeting Script</title>
+    <script type="text/javascript">
+        var t = prompt("Enter the time here:", "in 24-hr format (0.00)");
+       
+        var time = parseFloat(t);
+        if (time >= 4.00 && time < 12.00) {
+            document.write("Good Morning!");
+        }
+        else if (time >= 12.00 && time < 16.00) {
+            document.write("Good Afternoon!");
+        }
+        else if (time >= 16.00 && time <= 18.59) {
+            document.write("Good Evening!");
+        }
+else if(time<4.00 && time >= 19.00) {
+   document.write("Invalid! (Not morning/afternoon/evening)");
+}
+        else {
+            document.write("Invalid input!!");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Validation using Basic JavaScript</title>
+
+<script>
+function check() {
+    var name = prompt("Enter Name:");
+
+    if (name.length < 3) {
+        alert("Name must have at least 3 alphabets");
+        return;
+    }
+
+    for (var i = 0; i < name.length; i++) {
+        if (!((name[i] >= 'A' && name[i] <= 'Z') ||
+              (name[i] >= 'a' && name[i] <= 'z'))) {
+            alert("Name should contain only alphabets");
+            return;
+        }
+    }
+    var email = prompt("Enter Email:");
+    var atPos = email.indexOf("@");
+    var dotPos = email.lastIndexOf(".");
+
+    if (atPos < 1 || dotPos < atPos + 2 || dotPos + 2 >= email.length) {
+       alert("Invalid Email format");
+       return;
+}
+
+
+    var password = prompt("Enter Password:");
+
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters");
+        return;
+    }
+
+    var upper = false, lower = false, digit = false, special = false;
+
+    for (var i = 0; i < password.length; i++) {
+        if (password[i] >= 'A' && password[i] <= 'Z')
+            upper = true;
+        else if (password[i] >= 'a' && password[i] <= 'z')
+            lower = true;
+        else if (password[i] >= '0' && password[i] <= '9')
+            digit = true;
+        else
+            special = true;
+    }
+
+    if (!(upper && lower && digit && special)) {
+        alert("Weak password");
+        return;
+    }
+
+    var phone = prompt("Enter Phone Number:");
+
+    if (phone.length != 10) {
+        alert("Phone number must be 10 digits");
+        return;
+    }
+
+    for (var i = 0; i < phone.length; i++) {
+        if (!(phone[i] >= '0' && phone[i] <= '9')) {
+            alert("Phone number must contain only digits");
+            return;
+        }
+    }
+
+    var dob = prompt("Enter Date of Birth (DD-MM-YYYY):");
+
+    alert("Registration Successful!");
+}
+</script>
+
+
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<input type="button" value="Register" onclick="check()">
+
+</body>
+</html>
