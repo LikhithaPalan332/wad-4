@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<form>
+    <input type="button" value="Display Date" onclick="displayDate()">
+    <input type="text" id="date">
+    <input type="button" value="Calculate Factorial" onclick="factorial()">
+</form>
+
+<script type="text/javascript">
+
+function displayDate() {
+    var n = new Date();
+    var y = n.getFullYear();
+    var m = n.getMonth() + 1;
+    var d = n.getDate();
+
+    document.getElementById("date").value = m + "/" + d + "/" + y;
+}
+
+function factorial() {
+    var x = prompt("Enter a number to calculate its factorial:");
+
+    if (x === null || x === "" || x < 0) {
+        alert("Please enter a valid positive number");
+        return;
+    }
+
+    var fact = 1;
+    for (var i = 1; i <= x; i++) {
+        fact *= i;
+    }
+
+    alert("The factorial of " + x + " is " + fact);
+}
+
+</script>
+
+</body>
+</html>
